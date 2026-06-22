@@ -82,6 +82,8 @@
   .venture-card { background: var(--navy); border: 1px solid var(--border); border-top: 2px solid var(--gold); border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
   .venture-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
   .venture-preview { width: 100%; height: 160px; position: relative; background: var(--navy-light); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .venture-preview.live-preview { height: auto; background: #F7F4EF; }
+  .venture-preview.live-preview img { width: 100%; height: auto; display: block; }
   .browser-chrome { display: flex; align-items: center; gap: 5px; padding: 7px 10px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.06); }
   .browser-dot { width: 6px; height: 6px; border-radius: 50%; }
   .browser-urlbar { flex: 1; height: 13px; background: rgba(255,255,255,0.07); border-radius: 3px; margin-left: 4px; display: flex; align-items: center; padding: 0 7px; }
@@ -98,6 +100,8 @@
   .venture-link:hover { background: var(--gold-light); }
   .proj-thumb { width: 100%; height: 140px; background: var(--navy-light); border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
   .proj-thumb svg { width: 100%; height: 100%; display: block; }
+  .proj-thumb.live-preview { height: auto; background: #F7F4EF; }
+  .proj-thumb.live-preview img { width: 100%; height: auto; display: block; }
 
   .projects { background: var(--navy); }
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -378,6 +382,9 @@
 
       <!-- Time Flow AI -->
       <div class="venture-card reveal">
+        <div class="venture-preview live-preview">
+          <img src="assets/timeflow-dashboard.png" alt="Time Flow AI dashboard screenshot">
+        </div>
 <div class="venture-body">
           <div class="venture-type">AI Productivity  · SaaS</div>
           <div class="venture-name">Time Flow AI</div>
@@ -394,6 +401,9 @@
 
       <!-- Joga Bonito -->
       <div class="venture-card reveal" style="transition-delay:0.1s">
+        <div class="venture-preview live-preview">
+          <img src="assets/joga-bonito-storefront.png" alt="Joga Bonito storefront screenshot">
+        </div>
 <div class="venture-body">
           <div class="venture-type">E-Commerce  · Football &amp; Lifestyle</div>
           <div class="venture-name">Joga Bonito</div>
@@ -866,41 +876,8 @@
       </div>
 
       <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25); transition-delay:0.1s">
-        <div class="proj-thumb" style="height:180px;">
-          <svg viewBox="0 0 360 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <rect width="360" height="120" fill="#0D1B2A"/>
-            <!-- phone frame -->
-            <rect x="140" y="6" width="80" height="108" rx="10" fill="#162336" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
-            <rect x="144" y="16" width="72" height="90" rx="4" fill="#0D1B2A"/>
-            <rect x="155" y="9" width="30" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-            <!-- app UI inside phone -->
-            <rect x="146" y="18" width="68" height="10" rx="2" fill="#1E3050"/>
-            <rect x="150" y="21" width="30" height="4" rx="2" fill="rgba(201,168,76,0.5)"/>
-            <!-- time blocks -->
-            <rect x="146" y="32" width="68" height="8" rx="2" fill="rgba(201,168,76,0.25)"/>
-            <rect x="146" y="42" width="68" height="8" rx="2" fill="rgba(255,255,255,0.06)"/>
-            <rect x="146" y="52" width="68" height="12" rx="2" fill="rgba(201,168,76,0.4)"/>
-            <rect x="146" y="66" width="68" height="8" rx="2" fill="rgba(255,255,255,0.06)"/>
-            <rect x="146" y="76" width="68" height="8" rx="2" fill="rgba(201,168,76,0.2)"/>
-            <rect x="146" y="86" width="68" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
-            <rect x="146" y="94" width="68" height="8" rx="2" fill="rgba(201,168,76,0.35)"/>
-            <!-- left side: AI brain icon rough -->
-            <circle cx="65" cy="60" r="30" fill="#162336" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
-            <circle cx="65" cy="52" r="14" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-            <line x1="65" y1="38" x2="65" y2="34" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-            <line x1="51" y1="42" x2="48" y2="39" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-            <line x1="79" y1="42" x2="82" y2="39" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-            <rect x="58" y="62" width="14" height="16" rx="3" fill="rgba(201,168,76,0.3)"/>
-            <text x="65" y="73" font-size="8" fill="rgba(201,168,76,0.8)" text-anchor="middle" font-family="Inter,sans-serif">AI</text>
-            <!-- arrow from AI to phone -->
-            <line x1="96" y1="60" x2="136" y2="60" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <polygon points="136,57 142,60 136,63" fill="rgba(201,168,76,0.7)"/>
-            <!-- right side label -->
-            <rect x="230" y="44" width="100" height="7" rx="2" fill="rgba(255,255,255,0.12)"/>
-            <rect x="230" y="55" width="80" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-            <rect x="230" y="64" width="90" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
-            <rect x="230" y="73" width="70" height="5" rx="2" fill="rgba(201,168,76,0.3)"/>
-          </svg>
+        <div class="proj-thumb live-preview">
+          <img src="assets/timeflow-dashboard.png" alt="Time Flow AI dashboard screenshot">
         </div>
         <div style="padding:1.5rem 2rem 2rem">
         <span class="project-tag">AI  · Productivity</span>
