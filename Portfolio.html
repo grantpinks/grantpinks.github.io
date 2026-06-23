@@ -18,7 +18,7 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--white); line-height: 1.7; overflow-x: hidden; }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(13,27,42,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(13,27,42,0.9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; transition: color 0.2s; }
@@ -102,6 +102,8 @@
   .proj-thumb svg { width: 100%; height: 100%; display: block; }
   .proj-thumb.live-preview { height: auto; background: #F7F4EF; }
   .proj-thumb.live-preview img { width: 100%; height: auto; display: block; }
+  .deck-preview { height: 420px; background: var(--navy); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .deck-preview iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
 
   .projects { background: var(--navy); }
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -159,6 +161,7 @@
     section, .hero { padding: 5rem 1.5rem 4rem; }
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .ventures-grid, .projects-grid { grid-template-columns: 1fr; }
+    .deck-preview { height: 320px; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
     .edu-card { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -791,6 +794,121 @@
         </div>
       </div>
 
+
+      <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
+        <div class="deck-preview">
+          <iframe src="assets/Brown_Forman_Presentation.pdf#view=FitH" title="Brown-Forman acquisition presentation"></iframe>
+        </div>
+        <div style="padding:1.75rem 2rem 2rem">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+            <span class="project-tag" style="margin-bottom:0;">M&amp;A Strategy · Valuation · Investment Recommendation</span>
+            <span style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);">Group Case Presentation</span>
+          </div>
+          <div class="project-title">Brown-Forman Acquisition Analysis · Strategic Valuation Case</div>
+          <div class="project-desc">Built and presented a 29-slide strategic analysis of a potential Brown-Forman acquisition following market reports of Pernod Ricard interest. The case evaluated industry consolidation, Brown-Forman's premium spirits platform, buyer universe, standalone valuation, DCF, LBO feasibility, M&amp;A contribution analysis, synergy value, ROIC, comparable companies, and precedent transactions. The final recommendation was that Brown-Forman should remain independent unless offered a clearly compelling control premium that fully reflects its scarcity value, family voting control, and long-term bourbon/RTD growth exposure.</div>
+          <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0.85rem; margin:1.5rem 0; padding:1.25rem; background:var(--navy); border:1px solid var(--border); border-radius:2px;">
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">29</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Slide Deck</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">$31.78</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">DCF Value / Share</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">6.6-7.0%</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">WACC Range</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">22.8x</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Median M&amp;A EBITDA</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">Reject</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Merger-of-Equals View</div>
+            </div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">DCF Valuation</span>
+            <span class="stack-tag">LBO Feasibility</span>
+            <span class="stack-tag">Contribution Analysis</span>
+            <span class="stack-tag">Synergy NPV</span>
+            <span class="stack-tag">ROIC vs WACC</span>
+            <span class="stack-tag">Comps &amp; Precedents</span>
+            <span class="stack-tag">Strategic Buyer Analysis</span>
+          </div>
+          <div style="margin-top:1.25rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="assets/Brown_Forman_Presentation.pdf" target="_blank" rel="noopener" class="venture-link">Open Slide Deck &#x2197;</a>
+            <a href="assets/Brown_Forman_Presentation.pdf" download class="venture-link" style="background:var(--navy-light); color:var(--gold); border:1px solid rgba(201,168,76,0.4);">Download PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
+        <div class="proj-thumb" style="height:180px;">
+          <svg viewBox="0 0 720 180" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <rect width="720" height="180" fill="#0D1B2A"/>
+            <rect x="18" y="18" width="684" height="144" rx="3" fill="#162336" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+            <text x="38" y="42" font-size="9" fill="rgba(201,168,76,0.8)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1.4">EBNS DIGITAL MARKETING STRATEGY</text>
+            <text x="38" y="58" font-size="7" fill="rgba(255,255,255,0.38)" font-family="Inter,sans-serif">Campus coffee shop growth plan · Madison, WI</text>
+
+            <rect x="38" y="82" width="170" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <text x="58" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Mobile PageSpeed</text>
+            <text x="58" y="130" font-size="27" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">11/100</text>
+            <text x="132" y="130" font-size="7" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif">baseline audit</text>
+
+            <rect x="242" y="82" width="170" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <text x="262" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Follower Growth Goal</text>
+            <text x="262" y="130" font-size="27" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">+15%</text>
+            <text x="328" y="130" font-size="7" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif">by Dec. 2026</text>
+
+            <rect x="446" y="82" width="236" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <text x="466" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Go-to-Market Levers</text>
+            <rect x="466" y="118" width="44" height="7" rx="2" fill="rgba(201,168,76,0.65)"/>
+            <rect x="516" y="118" width="70" height="7" rx="2" fill="rgba(201,168,76,0.35)"/>
+            <rect x="592" y="118" width="52" height="7" rx="2" fill="rgba(100,140,200,0.35)"/>
+            <text x="466" y="140" font-size="7" fill="rgba(255,255,255,0.36)" font-family="Inter,sans-serif">SEO · ambassadors · content cadence · local partnerships</text>
+          </svg>
+        </div>
+        <div style="padding:1.75rem 2rem 2rem">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+            <span class="project-tag" style="margin-bottom:0;">Digital Marketing · Local SEO · Social Strategy</span>
+            <span style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);">Client Strategy Project</span>
+          </div>
+          <div class="project-title">EBNS Coffee · Digital Marketing Growth Strategy</div>
+          <div class="project-desc">Developed a digital marketing strategy for The Shop by EBNS, an independent Madison coffee shop serving the UW-Madison campus community. The project audited website performance, local search visibility, social media consistency, target customer behavior, online sentiment, competitor positioning, and loyalty-program promotion. Recommendations focused on improving PageSpeed and local SEO, launching student ambassador and campus-page partnerships, and implementing a weekly content calendar around brand storytelling, seasonal menu items, loyalty rewards, catering, and study-friendly shop culture.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.85rem; margin:1.5rem 0; padding:1.25rem; background:var(--navy); border:1px solid var(--border); border-radius:2px;">
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">11/100</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Mobile PageSpeed</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">+50%</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">SEO Performance Goal</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">+15%</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Social Growth Target</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">3</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Strategic Recommendations</div>
+            </div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Local SEO</span>
+            <span class="stack-tag">Google PageSpeed</span>
+            <span class="stack-tag">Search Console KPIs</span>
+            <span class="stack-tag">Student Ambassadors</span>
+            <span class="stack-tag">Influencer Partnerships</span>
+            <span class="stack-tag">Content Calendar</span>
+            <span class="stack-tag">Engagement Scoring</span>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <a href="assets/EBNS_Digital_Marketing_Strategy.docx" download class="venture-link">Download Strategy Doc</a>
+          </div>
+        </div>
+      </div>
 
       <div class="project-card reveal" style="transition-delay:0.1s">
         <div class="proj-thumb">
