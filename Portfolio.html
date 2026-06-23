@@ -81,9 +81,9 @@
   .ventures-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .venture-card { background: var(--navy); border: 1px solid var(--border); border-top: 2px solid var(--gold); border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
   .venture-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
-  .venture-preview { width: 100%; height: 160px; position: relative; background: var(--navy-light); border-bottom: 1px solid var(--border); overflow: hidden; }
-  .venture-preview.live-preview { height: auto; background: #F7F4EF; }
-  .venture-preview.live-preview img { width: 100%; height: auto; display: block; }
+  .venture-preview { width: 100%; aspect-ratio: 16 / 9; position: relative; background: var(--navy-light); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .venture-preview.live-preview { background: #F7F4EF; }
+  .venture-preview.live-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
   .browser-chrome { display: flex; align-items: center; gap: 5px; padding: 7px 10px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.06); }
   .browser-dot { width: 6px; height: 6px; border-radius: 50%; }
   .browser-urlbar { flex: 1; height: 13px; background: rgba(255,255,255,0.07); border-radius: 3px; margin-left: 4px; display: flex; align-items: center; padding: 0 7px; }
@@ -98,16 +98,17 @@
   .venture-stat-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-top: 0.2rem; }
   .venture-link { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 0.5rem 1rem; border-radius: 2px; text-decoration: none; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
   .venture-link:hover { background: var(--gold-light); }
-  .proj-thumb { width: 100%; height: 140px; background: var(--navy-light); border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
+  .proj-thumb { width: 100%; aspect-ratio: 3 / 1; background: #0D1B2A; border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
   .proj-thumb svg { width: 100%; height: 100%; display: block; }
-  .proj-thumb.live-preview { height: auto; background: #F7F4EF; }
-  .proj-thumb.live-preview img { width: 100%; height: auto; display: block; }
-  .deck-preview { height: 420px; background: var(--navy); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .proj-thumb.live-preview { aspect-ratio: 16 / 9; background: #F7F4EF; }
+  .proj-thumb.live-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 4 / 1; height: auto !important; }
+  .deck-preview { aspect-ratio: 16 / 9; background: var(--navy); border-bottom: 1px solid var(--border); overflow: hidden; }
   .deck-preview iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
 
   .projects { background: var(--navy); }
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .project-card { background: var(--navy-mid); border: 1px solid var(--border); padding: 2rem; border-radius: 2px; transition: border-color 0.2s; position: relative; overflow: hidden; }
+  .project-card { background: var(--navy-mid); border: 1px solid var(--border); padding: 0; border-radius: 2px; transition: border-color 0.2s; position: relative; overflow: hidden; }
   .project-card:hover { border-color: rgba(201,168,76,0.35); }
   .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); opacity: 0; transition: opacity 0.2s; }
   .project-card:hover::before { opacity: 1; }
@@ -161,7 +162,7 @@
     section, .hero { padding: 5rem 1.5rem 4rem; }
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .ventures-grid, .projects-grid { grid-template-columns: 1fr; }
-    .deck-preview { height: 320px; }
+    .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 3 / 1; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
     .edu-card { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
