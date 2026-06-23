@@ -103,8 +103,53 @@
   .proj-thumb.live-preview { aspect-ratio: 16 / 9; background: #F7F4EF; }
   .proj-thumb.live-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
   .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 4 / 1; height: auto !important; }
-  .deck-preview { aspect-ratio: 16 / 9; background: var(--navy); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .deck-preview { aspect-ratio: 16 / 9; background: var(--navy); border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
   .deck-preview iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+  .deck-preview-button { width: 100%; height: 100%; border: 0; cursor: pointer; color: inherit; font: inherit; text-align: left; background: radial-gradient(circle at 78% 20%, rgba(201,168,76,0.18), transparent 28%), linear-gradient(135deg, #0D1B2A 0%, #162336 100%); padding: 2rem; display: grid; place-items: center; }
+  .deck-preview-button:focus-visible { outline: 2px solid var(--gold); outline-offset: -6px; }
+  .deck-preview.is-loaded .deck-preview-button { display: none; }
+  .deck-preview-cover { width: min(760px, 100%); display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.25rem; align-items: stretch; }
+  .deck-cover-copy { background: rgba(13,27,42,0.78); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .deck-cover-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .deck-cover-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; color: var(--white); line-height: 1.08; margin-bottom: 0.8rem; }
+  .deck-cover-text { font-size: 0.78rem; color: var(--gray-light); line-height: 1.65; max-width: 34rem; }
+  .deck-cover-cta { margin-top: 1.1rem; display: inline-flex; align-self: flex-start; align-items: center; gap: 0.45rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 0.55rem 0.9rem; border-radius: 2px; }
+  .deck-slide-stack { position: relative; min-height: 210px; }
+  .deck-slide-card { position: absolute; inset: 0; background: #f8f4ec; border-radius: 4px; border: 1px solid rgba(201,168,76,0.28); box-shadow: 0 16px 40px rgba(0,0,0,0.25); padding: 1.1rem; transform: rotate(-2deg) translate(-6px, 8px); }
+  .deck-slide-card:nth-child(2) { transform: rotate(2deg) translate(14px, -4px); opacity: 0.72; }
+  .deck-slide-card:nth-child(3) { transform: rotate(0deg) translate(0, 16px); opacity: 0.94; }
+  .deck-slide-kicker { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8a6c20; margin-bottom: 0.8rem; }
+  .deck-slide-heading { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #0D1B2A; line-height: 1.1; margin-bottom: 1rem; }
+  .deck-slide-line { height: 8px; border-radius: 999px; background: rgba(13,27,42,0.14); margin-bottom: 0.55rem; }
+  .deck-slide-line.short { width: 66%; }
+  .project-preview { min-height: 260px; padding: 2rem; border-bottom: 1px solid var(--border); background: var(--navy); overflow: hidden; }
+  .preview-panel { background: rgba(13,27,42,0.78); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 1.25rem; }
+  .preview-eyebrow { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.65rem; }
+  .preview-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2.3rem); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 0.7rem; }
+  .preview-copy { font-size: 0.75rem; color: var(--gray-light); line-height: 1.6; }
+  .preview-metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .preview-metric { background: rgba(13,27,42,0.82); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 1rem; }
+  .preview-metric-value { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .preview-metric-label { margin-top: 0.4rem; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); }
+  .monster-preview { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 1.25rem; align-items: stretch; background: radial-gradient(circle at 12% 50%, rgba(0, 170, 70, 0.18), transparent 28%), linear-gradient(135deg, #07111d 0%, #0D1B2A 52%, #162336 100%); }
+  .monster-brand { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; }
+  .monster-logo-box { flex: 1; display: grid; place-items: center; background: #05080c; border: 1px solid rgba(0,255,80,0.18); border-radius: 4px; padding: 1.2rem; margin-bottom: 1rem; }
+  .monster-logo-box img { width: min(190px, 90%); height: auto; display: block; filter: drop-shadow(0 0 18px rgba(0,255,80,0.22)); }
+  .valuation-strip { display: grid; gap: 0.7rem; }
+  .valuation-row { display: grid; grid-template-columns: 70px 1fr auto; gap: 0.7rem; align-items: center; font-size: 0.68rem; color: var(--gray-light); }
+  .valuation-bar { height: 9px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+  .valuation-fill { height: 100%; background: linear-gradient(90deg, rgba(201,168,76,0.55), var(--gold)); border-radius: inherit; }
+  .valuation-strip.is-spaced { margin-top: 1.2rem; }
+  .valuation-fill.dcf { width: 74%; }
+  .valuation-fill.lbo { width: 92%; }
+  .valuation-fill.comps { width: 68%; }
+  .ebns-preview { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 1.25rem; align-items: stretch; background: radial-gradient(circle at 90% 10%, rgba(201,168,76,0.16), transparent 28%), linear-gradient(135deg, #0D1B2A 0%, #162336 100%); }
+  .ebns-action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+  .ebns-action { min-height: 110px; display: flex; flex-direction: column; justify-content: space-between; }
+  .ebns-action-number { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2rem; font-weight: 700; line-height: 1; }
+  .ebns-action-label { font-size: 0.66rem; color: var(--gray-light); line-height: 1.45; margin-top: 0.65rem; }
+  .strategy-pill-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 1rem; }
+  .strategy-pill { font-size: 0.62rem; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.08); padding: 0.22rem 0.55rem; border-radius: 999px; }
 
   .projects { background: var(--navy); }
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -163,9 +208,18 @@
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .ventures-grid, .projects-grid { grid-template-columns: 1fr; }
     .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 3 / 1; }
+    .project-preview, .monster-preview, .ebns-preview { grid-template-columns: 1fr; }
+    .deck-preview-cover { grid-template-columns: 1fr; }
+    .preview-metric-grid, .ebns-action-grid { grid-template-columns: 1fr 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
     .edu-card { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+  @media (max-width: 560px) {
+    .project-preview { padding: 1.25rem; }
+    .preview-metric-grid, .ebns-action-grid { grid-template-columns: 1fr; }
+    .valuation-row { grid-template-columns: 58px 1fr; }
+    .valuation-row span:last-child { grid-column: 2; }
   }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -664,85 +718,56 @@
       <!-- FEATURED: Monster Beverage LBO — full width -->
 
       <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
-        <div class="proj-thumb" style="height:180px;">
-          <svg viewBox="0 0 720 180" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <rect width="720" height="180" fill="#0D1B2A"/>
-            <!-- Monster can silhouette left -->
-            <rect x="28" y="20" width="46" height="140" rx="8" fill="#162336" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
-            <rect x="30" y="22" width="42" height="136" rx="7" fill="#1a1a1a"/>
-            <text x="51" y="72" font-size="18" fill="#00C000" text-anchor="middle" font-family="Impact,sans-serif" font-weight="900">M</text>
-            <rect x="30" y="80" width="42" height="3" fill="rgba(201,168,76,0.2)"/>
-            <rect x="32" y="88" width="38" height="5" rx="1" fill="rgba(255,255,255,0.06)"/>
-            <rect x="32" y="96" width="30" height="5" rx="1" fill="rgba(255,255,255,0.04)"/>
-            <rect x="30" y="140" width="42" height="18" rx="0 0 7 7" fill="#111"/>
-            <!-- divider -->
-            <line x1="90" y1="15" x2="90" y2="165" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <!-- sources and uses -->
-            <text x="108" y="30" font-size="8" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="1">SOURCES &amp; USES · $67.3B TOTAL</text>
-            <!-- stacked bar sources -->
-            <rect x="108" y="38" width="120" height="110" rx="2" fill="#162336"/>
-            <rect x="108" y="38" width="120" height="13" rx="2 2 0 0" fill="rgba(100,140,200,0.4)"/>
-            <text x="168" y="48" font-size="7" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-family="Inter,sans-serif">Bank Debt $12.3B</text>
-            <rect x="108" y="51" width="120" height="6" fill="rgba(140,170,220,0.3)"/>
-            <text x="168" y="58" font-size="6" fill="rgba(255,255,255,0.35)" text-anchor="middle" font-family="Inter,sans-serif">Mezz $3.5B</text>
-            <rect x="108" y="57" width="120" height="91" fill="rgba(201,168,76,0.25)"/>
-            <text x="168" y="108" font-size="7" fill="rgba(201,168,76,0.8)" text-anchor="middle" font-family="Inter,sans-serif">Sponsor Equity</text>
-            <text x="168" y="118" font-size="7" fill="rgba(201,168,76,0.6)" text-anchor="middle" font-family="Inter,sans-serif">$46.7B (69%)</text>
-            <!-- entry multiple label -->
-            <text x="168" y="162" font-size="7" fill="rgba(255,255,255,0.25)" text-anchor="middle" font-family="Inter,sans-serif">Entry: 25.9x EBITDA</text>
-            <!-- divider 2 -->
-            <line x1="244" y1="15" x2="244" y2="165" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <!-- sensitivity table -->
-            <text x="262" y="30" font-size="8" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="1">IRR SENSITIVITY · EXIT MULTIPLE vs PREMIUM</text>
-            <!-- table header -->
-            <rect x="260" y="36" width="200" height="12" rx="1" fill="#1E3050"/>
-            <text x="290" y="45" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">10%</text>
-            <text x="320" y="45" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">15%</text>
-            <text x="350" y="45" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">20%</text>
-            <text x="380" y="45" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">25%</text>
-            <text x="410" y="45" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">30%</text>
-            <!-- rows -->
-            <text x="264" y="59" font-size="6" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif">20x</text>
-            <rect x="280" y="51" width="22" height="12" rx="1" fill="rgba(100,140,200,0.2)"/><text x="291" y="60" font-size="6" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-family="Inter,sans-serif">9.4%</text>
-            <rect x="308" y="51" width="22" height="12" rx="1" fill="rgba(100,140,200,0.2)"/><text x="319" y="60" font-size="6" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-family="Inter,sans-serif">8.0%</text>
-            <rect x="336" y="51" width="22" height="12" rx="1" fill="rgba(100,140,200,0.2)"/><text x="347" y="60" font-size="6" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-family="Inter,sans-serif">6.7%</text>
-            <rect x="364" y="51" width="22" height="12" rx="1" fill="rgba(100,140,200,0.15)"/><text x="375" y="60" font-size="6" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="Inter,sans-serif">5.5%</text>
-            <rect x="392" y="51" width="22" height="12" rx="1" fill="rgba(100,140,200,0.1)"/><text x="403" y="60" font-size="6" fill="rgba(255,255,255,0.35)" text-anchor="middle" font-family="Inter,sans-serif">4.3%</text>
-            <text x="264" y="75" font-size="6" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif">25x</text>
-            <rect x="280" y="66" width="22" height="12" rx="1" fill="rgba(201,168,76,0.25)"/><text x="291" y="75" font-size="6" fill="rgba(201,168,76,0.8)" text-anchor="middle" font-family="Inter,sans-serif">15.0%</text>
-            <rect x="308" y="66" width="22" height="12" rx="1" fill="rgba(201,168,76,0.3)"/><text x="319" y="75" font-size="6" fill="rgba(201,168,76,0.9)" text-anchor="middle" font-family="Inter,sans-serif">13.5%</text>
-            <rect x="336" y="66" width="22" height="12" rx="1" fill="rgba(201,168,76,0.25)"/><text x="347" y="75" font-size="6" fill="rgba(201,168,76,0.8)" text-anchor="middle" font-family="Inter,sans-serif">12.2%</text>
-            <rect x="364" y="66" width="22" height="12" rx="1" fill="rgba(201,168,76,0.2)"/><text x="375" y="75" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">10.9%</text>
-            <rect x="392" y="66" width="22" height="12" rx="1" fill="rgba(201,168,76,0.15)"/><text x="403" y="75" font-size="6" fill="rgba(201,168,76,0.6)" text-anchor="middle" font-family="Inter,sans-serif">9.7%</text>
-            <text x="264" y="91" font-size="6" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif">30x</text>
-            <rect x="280" y="82" width="22" height="12" rx="1" fill="rgba(201,168,76,0.4)"/><text x="291" y="91" font-size="6" fill="rgba(201,168,76,1)" text-anchor="middle" font-family="Inter,sans-serif">19.7%</text>
-            <rect x="308" y="82" width="22" height="12" rx="1" fill="rgba(201,168,76,0.35)"/><text x="319" y="91" font-size="6" fill="rgba(201,168,76,0.95)" text-anchor="middle" font-family="Inter,sans-serif">18.1%</text>
-            <rect x="336" y="82" width="22" height="12" rx="1" fill="rgba(201,168,76,0.3)"/><text x="347" y="91" font-size="6" fill="rgba(201,168,76,0.9)" text-anchor="middle" font-family="Inter,sans-serif">16.7%</text>
-            <rect x="364" y="82" width="22" height="12" rx="1" fill="rgba(201,168,76,0.25)"/><text x="375" y="91" font-size="6" fill="rgba(201,168,76,0.8)" text-anchor="middle" font-family="Inter,sans-serif">15.4%</text>
-            <rect x="392" y="82" width="22" height="12" rx="1" fill="rgba(201,168,76,0.2)"/><text x="403" y="91" font-size="6" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">14.1%</text>
-            <!-- precedent txns -->
-            <text x="264" y="115" font-size="8" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="1">PRECEDENT TRANSACTIONS · EV/EBITDA</text>
-            <rect x="264" y="120" width="190" height="8" rx="1" fill="#162336"/>
-            <rect x="264" y="120" width="95" height="8" rx="1" fill="rgba(201,168,76,0.35)"/>
-            <text x="312" y="127" font-size="6" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="Inter,sans-serif">Coca-Cola / Monster 15.9x</text>
-            <rect x="264" y="131" width="190" height="8" rx="1" fill="#162336"/>
-            <rect x="264" y="131" width="143" height="8" rx="1" fill="rgba(201,168,76,0.25)"/>
-            <text x="336" y="138" font-size="6" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="Inter,sans-serif">GHOST / KDP 16.1x</text>
-            <rect x="264" y="142" width="190" height="8" rx="1" fill="#162336"/>
-            <rect x="264" y="142" width="58" height="8" rx="1" fill="rgba(201,168,76,0.2)"/>
-            <text x="360" y="149" font-size="6" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="Inter,sans-serif">CANarchy 9.5x   |   Median: 15.9x</text>
-            <!-- divider 3 -->
-            <line x1="470" y1="15" x2="470" y2="165" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-            <!-- key outputs panel -->
-            <text x="488" y="30" font-size="8" fill="rgba(201,168,76,0.6)" font-family="Inter,sans-serif" font-weight="600" letter-spacing="1">MODEL OUTPUTS</text>
-            <text x="488" y="54" font-size="17" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">$47.3B</text>
-            <text x="488" y="67" font-size="7" fill="rgba(255,255,255,0.3)" font-family="Inter,sans-serif">DCF IMPLIED EV</text>
-            <text x="488" y="90" font-size="17" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">8.05%</text>
-            <text x="488" y="103" font-size="7" fill="rgba(255,255,255,0.3)" font-family="Inter,sans-serif">WACC</text>
-            <text x="488" y="126" font-size="17" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">21.6x</text>
-            <text x="488" y="139" font-size="7" fill="rgba(255,255,255,0.3)" font-family="Inter,sans-serif">EV / 2024A EBITDA</text>
-            <text x="488" y="158" font-size="10" fill="rgba(201,168,76,0.6)" font-family="'Playfair Display',serif" font-weight="700">$63.6B Entry EV</text>
-          </svg>
+        <div class="project-preview monster-preview">
+          <div class="preview-panel monster-brand">
+            <div class="monster-logo-box">
+              <img src="assets/monster-energy-logo.webp" alt="Monster Energy logo">
+            </div>
+            <div>
+              <div class="preview-eyebrow">Full IB Model Suite</div>
+              <div class="preview-copy">DCF, LBO, precedent transactions, and sensitivity work for Monster Beverage Corporation.</div>
+            </div>
+          </div>
+          <div class="preview-panel">
+            <div class="preview-eyebrow">Valuation Range</div>
+            <div class="preview-title">$47.3B DCF Implied EV</div>
+            <div class="preview-copy">Built an integrated valuation view around WACC, EBITDA multiple assumptions, leverage capacity, and transaction precedent support.</div>
+            <div class="valuation-strip is-spaced">
+              <div class="valuation-row">
+                <span>DCF</span>
+                <div class="valuation-bar"><div class="valuation-fill dcf"></div></div>
+                <span>$47.3B</span>
+              </div>
+              <div class="valuation-row">
+                <span>LBO</span>
+                <div class="valuation-bar"><div class="valuation-fill lbo"></div></div>
+                <span>$63.6B</span>
+              </div>
+              <div class="valuation-row">
+                <span>Comps</span>
+                <div class="valuation-bar"><div class="valuation-fill comps"></div></div>
+                <span>6 deals</span>
+              </div>
+            </div>
+          </div>
+          <div class="preview-metric-grid">
+            <div class="preview-metric">
+              <div class="preview-metric-value">8.05%</div>
+              <div class="preview-metric-label">WACC</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">25.9x</div>
+              <div class="preview-metric-label">Entry EBITDA</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">7x</div>
+              <div class="preview-metric-label">Total Leverage</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">21.6x</div>
+              <div class="preview-metric-label">EV / EBITDA</div>
+            </div>
+          </div>
         </div>
         <div style="padding:1.75rem 2rem 2rem">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
@@ -797,8 +822,28 @@
 
 
       <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
-        <div class="deck-preview">
-          <iframe src="assets/Brown_Forman_Presentation.pdf#view=FitH" title="Brown-Forman acquisition presentation"></iframe>
+        <div class="deck-preview" data-pdf-src="assets/Brown_Forman_Presentation.pdf#view=FitH" data-pdf-title="Brown-Forman acquisition presentation">
+          <button class="deck-preview-button" type="button" aria-label="Click to preview the Brown-Forman slide deck">
+            <div class="deck-preview-cover">
+              <div class="deck-cover-copy">
+                <div class="deck-cover-label">Interactive Slide Deck</div>
+                <div class="deck-cover-title">Brown-Forman Acquisition Analysis</div>
+                <div class="deck-cover-text">Click to load the embedded presentation and move through the valuation, strategic buyer, and recommendation slides.</div>
+                <span class="deck-cover-cta">Preview Slides &#x2192;</span>
+              </div>
+              <div class="deck-slide-stack" aria-hidden="true">
+                <div class="deck-slide-card"></div>
+                <div class="deck-slide-card"></div>
+                <div class="deck-slide-card">
+                  <div class="deck-slide-kicker">Strategic Valuation Case</div>
+                  <div class="deck-slide-heading">Premium Spirits Platform Review</div>
+                  <div class="deck-slide-line"></div>
+                  <div class="deck-slide-line"></div>
+                  <div class="deck-slide-line short"></div>
+                </div>
+              </div>
+            </div>
+          </button>
         </div>
         <div style="padding:1.75rem 2rem 2rem">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
@@ -846,30 +891,41 @@
       </div>
 
       <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
-        <div class="proj-thumb" style="height:180px;">
-          <svg viewBox="0 0 720 180" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <rect width="720" height="180" fill="#0D1B2A"/>
-            <rect x="18" y="18" width="684" height="144" rx="3" fill="#162336" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
-            <text x="38" y="42" font-size="9" fill="rgba(201,168,76,0.8)" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1.4">EBNS DIGITAL MARKETING STRATEGY</text>
-            <text x="38" y="58" font-size="7" fill="rgba(255,255,255,0.38)" font-family="Inter,sans-serif">Campus coffee shop growth plan · Madison, WI</text>
-
-            <rect x="38" y="82" width="170" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-            <text x="58" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Mobile PageSpeed</text>
-            <text x="58" y="130" font-size="27" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">11/100</text>
-            <text x="132" y="130" font-size="7" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif">baseline audit</text>
-
-            <rect x="242" y="82" width="170" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-            <text x="262" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Follower Growth Goal</text>
-            <text x="262" y="130" font-size="27" fill="#C9A84C" font-family="'Playfair Display',serif" font-weight="700">+15%</text>
-            <text x="328" y="130" font-size="7" fill="rgba(255,255,255,0.35)" font-family="Inter,sans-serif">by Dec. 2026</text>
-
-            <rect x="446" y="82" width="236" height="56" rx="3" fill="#0D1B2A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-            <text x="466" y="104" font-size="8" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif">Go-to-Market Levers</text>
-            <rect x="466" y="118" width="44" height="7" rx="2" fill="rgba(201,168,76,0.65)"/>
-            <rect x="516" y="118" width="70" height="7" rx="2" fill="rgba(201,168,76,0.35)"/>
-            <rect x="592" y="118" width="52" height="7" rx="2" fill="rgba(100,140,200,0.35)"/>
-            <text x="466" y="140" font-size="7" fill="rgba(255,255,255,0.36)" font-family="Inter,sans-serif">SEO · ambassadors · content cadence · local partnerships</text>
-          </svg>
+        <div class="project-preview ebns-preview">
+          <div class="preview-panel">
+            <div class="preview-eyebrow">EBNS Digital Marketing Strategy</div>
+            <div class="preview-title">Campus Coffee Shop Growth Plan</div>
+            <div class="preview-copy">A client-style marketing project focused on local search, site performance, student discovery, and content consistency for a Madison coffee shop.</div>
+            <div class="strategy-pill-row">
+              <span class="strategy-pill">Local SEO</span>
+              <span class="strategy-pill">PageSpeed</span>
+              <span class="strategy-pill">Social Growth</span>
+              <span class="strategy-pill">Campus Partnerships</span>
+            </div>
+          </div>
+          <div class="ebns-action-grid">
+            <div class="preview-panel ebns-action">
+              <div>
+                <div class="preview-eyebrow">Baseline Audit</div>
+                <div class="ebns-action-number">11/100</div>
+              </div>
+              <div class="ebns-action-label">Mobile PageSpeed score identified as the highest-impact technical fix.</div>
+            </div>
+            <div class="preview-panel ebns-action">
+              <div>
+                <div class="preview-eyebrow">SEO Target</div>
+                <div class="ebns-action-number">+50%</div>
+              </div>
+              <div class="ebns-action-label">Performance goal tied to better local discovery and search visibility.</div>
+            </div>
+            <div class="preview-panel ebns-action">
+              <div>
+                <div class="preview-eyebrow">Social Growth</div>
+                <div class="ebns-action-number">+15%</div>
+              </div>
+              <div class="ebns-action-label">Follower growth target supported by ambassadors and content cadence.</div>
+            </div>
+          </div>
         </div>
         <div style="padding:1.75rem 2rem 2rem">
           <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
@@ -1097,6 +1153,18 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.deck-preview[data-pdf-src]').forEach(deck => {
+    const button = deck.querySelector('.deck-preview-button');
+    button?.addEventListener('click', () => {
+      if (deck.classList.contains('is-loaded')) return;
+      const frame = document.createElement('iframe');
+      frame.src = deck.dataset.pdfSrc;
+      frame.title = deck.dataset.pdfTitle || 'Presentation preview';
+      deck.appendChild(frame);
+      deck.classList.add('is-loaded');
+    });
+  });
 </script>
 </body>
 </html>
