@@ -150,6 +150,14 @@
   .ebns-action-label { font-size: 0.66rem; color: var(--gray-light); line-height: 1.45; margin-top: 0.65rem; }
   .strategy-pill-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 1rem; }
   .strategy-pill { font-size: 0.62rem; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.08); padding: 0.22rem 0.55rem; border-radius: 999px; }
+  .criterium-preview { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 1.25rem; align-items: stretch; background: radial-gradient(circle at 18% 20%, rgba(201,168,76,0.14), transparent 30%), linear-gradient(135deg, #07111d 0%, #0D1B2A 55%, #162336 100%); }
+  .criterium-brand { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; }
+  .criterium-mark { width: 52px; height: 52px; border-radius: 4px; border: 1px solid rgba(201,168,76,0.35); background: rgba(201,168,76,0.1); display: grid; place-items: center; font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--gold); margin-bottom: 1.1rem; }
+  .criterium-workflow { display: grid; gap: 0.75rem; }
+  .workflow-step { display: grid; grid-template-columns: 28px 1fr; gap: 0.75rem; align-items: start; padding: 0.85rem 1rem; background: rgba(13,27,42,0.78); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; }
+  .workflow-step-num { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
+  .workflow-step-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); margin-bottom: 0.25rem; }
+  .workflow-step-copy { font-size: 0.66rem; color: var(--gray-light); line-height: 1.45; }
 
   .projects { background: var(--navy); }
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -208,7 +216,7 @@
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .ventures-grid, .projects-grid { grid-template-columns: 1fr; }
     .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 3 / 1; }
-    .project-preview, .monster-preview, .ebns-preview { grid-template-columns: 1fr; }
+    .project-preview, .monster-preview, .ebns-preview, .criterium-preview { grid-template-columns: 1fr; }
     .deck-preview-cover { grid-template-columns: 1fr; }
     .preview-metric-grid, .ebns-action-grid { grid-template-columns: 1fr 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
@@ -516,6 +524,103 @@
     <h2 class="section-heading reveal">Selected work &amp; tools.</h2>
     <div class="projects-grid">
 
+      <!-- FEATURED: Criterium — CRE Underwriting Workstation -->
+      <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25);">
+        <div class="project-preview criterium-preview">
+          <div class="preview-panel criterium-brand">
+            <div>
+              <div class="criterium-mark">C</div>
+              <div class="preview-eyebrow">Active Build</div>
+              <div class="preview-title">Criterium</div>
+              <div class="preview-copy">Local-first CRE credit review for borrower tax packages, PFS data, property schedules, and debt scenarios.</div>
+            </div>
+          </div>
+          <div class="criterium-workflow">
+            <div class="workflow-step">
+              <div class="workflow-step-num">01</div>
+              <div>
+                <div class="workflow-step-label">Upload</div>
+                <div class="workflow-step-copy">PDF package assembly, page rendering, and document classification.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">02</div>
+              <div>
+                <div class="workflow-step-label">Extract</div>
+                <div class="workflow-step-copy">OCR and template maps pull underwriting fields with coordinate provenance.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">03</div>
+              <div>
+                <div class="workflow-step-label">Review</div>
+                <div class="workflow-step-copy">Source-cited candidates, exceptions, QA, and audit trail before acceptance.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">04</div>
+              <div>
+                <div class="workflow-step-label">Export</div>
+                <div class="workflow-step-copy">Fail-closed readiness gates block unreviewed or unsafe values from outputs.</div>
+              </div>
+            </div>
+          </div>
+          <div class="preview-metric-grid">
+            <div class="preview-metric">
+              <div class="preview-metric-value">Local</div>
+              <div class="preview-metric-label">Sensitive Packages</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">Cited</div>
+              <div class="preview-metric-label">Source Review Trail</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">NOI</div>
+              <div class="preview-metric-label">DSCR Flow Live</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">Closed</div>
+              <div class="preview-metric-label">Export Safeguards</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:1.75rem 2rem 2rem">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+            <span class="project-tag" style="margin-bottom:0;">CRE Credit · Document Underwriting · Fail-Closed Exports</span>
+            <span style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);">Active Build · Local-First Workstation</span>
+          </div>
+          <div class="project-title">Criterium · CRE Underwriting Workstation</div>
+          <div class="project-desc">Criterium is a commercial real estate underwriting workstation for bank analysts reviewing borrower tax returns, personal financial statements, property schedules, and debt scenarios. The product goal is to cut manual review time while keeping extraction traceable and loan-committee outputs auditable. The current build includes a local-first document workflow, PDF rendering and classification, OCR/template extraction with IRS form coordinate maps, and a review workstation covering candidates, source highlights, exceptions, QA, underwriting, and export. Core Schedule E → NOI/DSCR logic, debt scenario comparison, and fail-closed export readiness are already in place. This is an active build: OCR accuracy, multi-year navigation, guarantor matching, and broader package coverage are still progressing—the value is the domain modeling and governed review workflow, not production polish yet.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.85rem; margin:1.5rem 0; padding:1.25rem; background:var(--navy); border:1px solid var(--border); border-radius:2px;">
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">Local-First</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Sensitive Borrower Packages</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">Source-Cited</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">OCR with Review + Audit Trail</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">NOI / DSCR</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Core Underwriting Flow Live</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">Fail-Closed</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Export Blocks Unreviewed Values</div>
+            </div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Document OCR</span>
+            <span class="stack-tag">Schedule E Extraction</span>
+            <span class="stack-tag">NOI / DSCR</span>
+            <span class="stack-tag">Debt Scenarios</span>
+            <span class="stack-tag">Export Readiness</span>
+            <span class="stack-tag">Tax QA / Provenance</span>
+            <span class="stack-tag">Guarantor Matching (In Progress)</span>
+            <span class="stack-tag">CRE Package Corpus</span>
+          </div>
+        </div>
+      </div>
 
             <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25); transition-delay:0.1s">
         <div class="proj-thumb" style="height:180px;">
