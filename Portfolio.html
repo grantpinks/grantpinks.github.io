@@ -150,7 +150,8 @@
   .ebns-action-label { font-size: 0.66rem; color: var(--gray-light); line-height: 1.45; margin-top: 0.65rem; }
   .strategy-pill-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 1rem; }
   .strategy-pill { font-size: 0.62rem; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); background: rgba(201,168,76,0.08); padding: 0.22rem 0.55rem; border-radius: 999px; }
-  .criterium-preview { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 1.25rem; align-items: stretch; background: radial-gradient(circle at 18% 20%, rgba(201,168,76,0.14), transparent 30%), linear-gradient(135deg, #07111d 0%, #0D1B2A 55%, #162336 100%); }
+  .criterium-preview, .jb-preview { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 1.25rem; align-items: stretch; background: radial-gradient(circle at 18% 20%, rgba(201,168,76,0.14), transparent 30%), linear-gradient(135deg, #07111d 0%, #0D1B2A 55%, #162336 100%); }
+  .jb-preview { background: radial-gradient(circle at 82% 18%, rgba(201,168,76,0.12), transparent 28%), linear-gradient(135deg, #07111d 0%, #0D1B2A 52%, #162336 100%); }
   .criterium-brand { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; }
   .criterium-mark { width: 52px; height: 52px; border-radius: 4px; border: 1px solid rgba(201,168,76,0.35); background: rgba(201,168,76,0.1); display: grid; place-items: center; font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--gold); margin-bottom: 1.1rem; }
   .criterium-workflow { display: grid; gap: 0.75rem; }
@@ -216,7 +217,7 @@
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .ventures-grid, .projects-grid { grid-template-columns: 1fr; }
     .project-card[style*="grid-column"] > .proj-thumb:not(.live-preview) { aspect-ratio: 3 / 1; }
-    .project-preview, .monster-preview, .ebns-preview, .criterium-preview { grid-template-columns: 1fr; }
+    .project-preview, .monster-preview, .ebns-preview, .criterium-preview, .jb-preview { grid-template-columns: 1fr; }
     .deck-preview-cover { grid-template-columns: 1fr; }
     .preview-metric-grid, .ebns-action-grid { grid-template-columns: 1fr 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
@@ -473,7 +474,7 @@
 <div class="venture-body">
           <div class="venture-type">E-Commerce  · Football &amp; Lifestyle</div>
           <div class="venture-name">Joga Bonito</div>
-          <div class="venture-desc">Active e-commerce store built around football culture and lifestyle. Designed, launched, and operated end-to-end   branding, product curation, marketing, and customer experience.</div>
+          <div class="venture-desc">Active e-commerce store built around football culture and lifestyle. Designed, launched, and operated end to end   branding, product curation, marketing, and customer experience. Catalog and content operations run on a custom Python automation platform built in house.</div>
           <div class="venture-footer">
             <div class="venture-stat-block">
               <div class="venture-stat">Live</div>
@@ -618,6 +619,114 @@
             <span class="stack-tag">Tax QA / Provenance</span>
             <span class="stack-tag">Guarantor Matching (In Progress)</span>
             <span class="stack-tag">CRE Package Corpus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED: Joga Bonito — E-Commerce Automation Platform -->
+      <div class="project-card reveal" style="grid-column: 1 / -1; border-color: rgba(201,168,76,0.25); transition-delay:0.05s">
+        <div class="project-preview jb-preview">
+          <div class="preview-panel criterium-brand">
+            <div>
+              <div class="criterium-mark">JB</div>
+              <div class="preview-eyebrow">Production Platform</div>
+              <div class="preview-title">Joga Bonito</div>
+              <div class="preview-copy">24/7 VPS automation powering catalog ingestion, AI enrichment, social content, and Shopify export for a live football lifestyle store.</div>
+              <div class="strategy-pill-row">
+                <span class="strategy-pill">TikTok</span>
+                <span class="strategy-pill">Yupoo</span>
+                <span class="strategy-pill">EZJersey</span>
+                <span class="strategy-pill">Instagram</span>
+                <span class="strategy-pill">Shopify</span>
+              </div>
+            </div>
+          </div>
+          <div class="criterium-workflow">
+            <div class="workflow-step">
+              <div class="workflow-step-num">01</div>
+              <div>
+                <div class="workflow-step-label">Ingest</div>
+                <div class="workflow-step-copy">Multi source scrapers pull supplier URLs, images, and social content on scheduled cron jobs.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">02</div>
+              <div>
+                <div class="workflow-step-label">Enrich</div>
+                <div class="workflow-step-copy">Computer vision color detection plus GPT naming and HTML descriptions in brand voice.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">03</div>
+              <div>
+                <div class="workflow-step-label">Manage</div>
+                <div class="workflow-step-copy">Google Sheets as operational PIM with status tracking, deduplication, and review queue.</div>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="workflow-step-num">04</div>
+              <div>
+                <div class="workflow-step-label">Export</div>
+                <div class="workflow-step-copy">74 column Shopify CSV generation with variant logic and bulk upload prep.</div>
+              </div>
+            </div>
+          </div>
+          <div class="preview-metric-grid">
+            <div class="preview-metric">
+              <div class="preview-metric-value">50+</div>
+              <div class="preview-metric-label">Hrs/Wk Saved</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">19</div>
+              <div class="preview-metric-label">systemd Services</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">74</div>
+              <div class="preview-metric-label">Shopify CSV Cols</div>
+            </div>
+            <div class="preview-metric">
+              <div class="preview-metric-value">95%+</div>
+              <div class="preview-metric-label">Pipeline Success</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:1.75rem 2rem 2rem">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+            <span class="project-tag" style="margin-bottom:0;">E-Commerce · Automation · AI</span>
+            <span style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);">Production Platform · VPS Deployed</span>
+          </div>
+          <div class="project-title">Joga Bonito · E-Commerce Automation Platform</div>
+          <div class="project-desc">Built and deployed a production VPS automation platform powering Joga Bonito's catalog and content operations. The system ingests products from TikTok, Yupoo, EZJersey, and Instagram, enriches them with computer vision and OpenAI, manages inventory in Google Sheets, and exports Shopify ready listings through a custom command center with job queues and real time monitoring. Replaced paid no code workflows and eliminated more than 50 hours per week of manual work sourcing images, writing descriptions, and preparing bulk uploads.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.85rem; margin:1.5rem 0; padding:1.25rem; background:var(--navy); border:1px solid var(--border); border-radius:2px;">
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">50+ Hrs/Wk</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Manual Work Eliminated</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">19 Services</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">24/7 VPS Automation</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">74 Col CSV</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Shopify Bulk Import Ready</div>
+            </div>
+            <div>
+              <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold);">95%+</div>
+              <div style="font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray); margin-top:0.2rem;">Pipeline Success Rate</div>
+            </div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">Playwright</span>
+            <span class="stack-tag">OpenAI</span>
+            <span class="stack-tag">Google Sheets API</span>
+            <span class="stack-tag">Dropbox</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">systemd</span>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <a href="https://jogabonito.org" target="_blank" rel="noopener" class="venture-link">Visit Live Store &#x2197;</a>
           </div>
         </div>
       </div>
@@ -1069,42 +1178,6 @@
           <div style="margin-top:1.25rem;">
             <a href="assets/EBNS_Digital_Marketing_Strategy.docx" download class="venture-link">Download Strategy Doc</a>
           </div>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:0.1s">
-        <div class="proj-thumb">
-          <svg viewBox="0 0 360 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <rect width="360" height="120" fill="#0D1B2A"/>
-            <circle cx="55" cy="60" r="18" fill="#1E3050" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-            <rect x="45" y="55" width="20" height="10" rx="2" fill="rgba(201,168,76,0.4)"/>
-            <text x="55" y="84" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="Inter,sans-serif">Google API</text>
-            <circle cx="180" cy="35" r="18" fill="#1E3050" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
-            <rect x="170" y="30" width="20" height="10" rx="2" fill="rgba(201,168,76,0.5)"/>
-            <text x="180" y="20" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="Inter,sans-serif">Excel API</text>
-            <circle cx="180" cy="85" r="18" fill="#1E3050" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-            <rect x="170" y="80" width="20" height="10" rx="2" fill="rgba(201,168,76,0.35)"/>
-            <text x="180" y="115" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle" font-family="Inter,sans-serif">Social APIs</text>
-            <circle cx="305" cy="60" r="22" fill="#162336" stroke="rgba(201,168,76,0.8)" stroke-width="2"/>
-            <rect x="292" y="52" width="26" height="16" rx="3" fill="rgba(201,168,76,0.3)"/>
-            <text x="305" y="87" font-size="7" fill="rgba(201,168,76,0.7)" text-anchor="middle" font-family="Inter,sans-serif">Dashboard</text>
-            <line x1="73" y1="55" x2="162" y2="40" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <line x1="73" y1="65" x2="162" y2="82" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <line x1="198" y1="40" x2="283" y2="55" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <line x1="198" y1="82" x2="283" y2="67" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <circle cx="118" cy="47" r="3" fill="#C9A84C" opacity="0.8"/>
-            <circle cx="118" cy="73" r="3" fill="#C9A84C" opacity="0.6"/>
-            <circle cx="240" cy="47" r="3" fill="#C9A84C" opacity="0.9"/>
-            <circle cx="240" cy="73" r="3" fill="#C9A84C" opacity="0.7"/>
-          </svg>
-        </div>
-        <div style="padding:1.5rem 2rem 2rem">
-        <span class="project-tag">AI · Automation</span>
-        <div class="project-title">Workflow Automation Suite</div>
-        <div class="project-desc">Python scripts and API integrations automating data reporting, ad tracking, and CRM across Google, Excel, and social platforms, eliminating 20 hrs/week of manual work and reducing errors by 80%.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Python</span><span class="stack-tag">Google API</span><span class="stack-tag">Data Pipelines</span><span class="stack-tag">CRM</span>
-        </div>
         </div>
       </div>
 
